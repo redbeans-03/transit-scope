@@ -65,6 +65,11 @@ Then open <http://127.0.0.1:43917>. The dashboard reads
 `public/data/exoplanet_data.json`, which is committed, so it works immediately.
 If that file is missing it explains how to generate one instead of failing.
 
+If you serve the dev server through a tunnel or container port forward and the
+charts come up blank, add that hostname to `allowedDevOrigins` in
+`next.config.ts`: Next blocks cross-origin requests for `/_next/*` dev assets,
+which 403s the client bundle while still server-rendering the page.
+
 ### Extraction pipeline
 
 Requires [uv](https://docs.astral.sh/uv/) (or any Python ≥ 3.10 environment).
