@@ -298,7 +298,8 @@ def run_pipeline(
         "schema_version": SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "pipeline_version": __version__,
-        "provenance": bundle.provenance,
+        "provenance": bundle.provenance
+        | {"cadence_minutes": float(bundle.cadence_minutes)},
         "star": star.to_dict(),
         "limb_darkening": {
             "u1": star.u1,

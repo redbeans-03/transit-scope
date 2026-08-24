@@ -28,8 +28,9 @@ export function ComparisonMatrix({ payload }: { payload: ExoplanetPayload }) {
     },
     {
       parameter: "Sampling",
-      satellite: `${integer(
-        (provenance.baseline_days * 24 * 60) / provenance.n_cadences,
+      satellite: `${fixed(
+        provenance.cadence_minutes,
+        1,
       )} minute long cadence (${integer(provenance.n_cadences)} exposures)`,
       hardware: "100 ms (10 Hz), limited by the sensor's integration time",
     },

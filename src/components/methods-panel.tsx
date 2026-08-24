@@ -44,8 +44,8 @@ export function MethodsPanel({ payload }: { payload: ExoplanetPayload }) {
     {
       title: "Fit the transit",
       detail: `The folded curve is binned and fitted with a quadratic limb-darkened model, integrating the intensity profile over the planet-star overlap and averaging over the ${fixed(
-        (provenance.baseline_days * 24 * 60) / provenance.n_cadences,
-        0,
+        provenance.cadence_minutes,
+        1,
       )} minute exposure. a/R* is ${fit.a_over_rstar_source}, leaving Rp/R* and the impact parameter free. Residual RMS: ${fixed(
         fit.rms_residual_ppm,
         0,

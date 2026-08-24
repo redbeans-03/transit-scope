@@ -36,7 +36,10 @@ export function Hero({ payload }: { payload: ExoplanetPayload }) {
         </Badge>
         <h1 className="mt-5 max-w-3xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
           A hot Jupiter measured from a{" "}
-          <span className="text-primary">0.88% dip</span> in starlight
+          <span className="text-primary">
+            {fixed(depth.depth_percent, 2)}% dip
+          </span>{" "}
+          in starlight
         </h1>
         <p className="mt-5 max-w-2xl text-pretty leading-relaxed text-muted-foreground">
           Kepler-8b crosses its host star every{" "}

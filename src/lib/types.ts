@@ -10,6 +10,7 @@ export interface Provenance {
   mission: string;
   author?: string;
   cadence: string;
+  cadence_minutes: number;
   target: string;
   object: string;
   quarters?: number[];
