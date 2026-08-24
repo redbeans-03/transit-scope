@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Python pipeline and its virtualenv are not JavaScript sources.
+    "pipeline/**",
+    "public/**",
   ]),
 ]);
 
