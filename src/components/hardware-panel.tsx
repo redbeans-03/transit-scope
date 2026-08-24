@@ -177,7 +177,7 @@ export function HardwarePanel({ u1, u2 }: { u1: number; u2: number }) {
   return (
     <div className="grid gap-4 lg:grid-cols-3">
       <Card className="lg:col-span-2">
-        <CardHeader className="gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <CardHeader className="gap-3 sm:grid-cols-[1fr_auto] sm:items-center">
           <div>
             <CardTitle className="text-base">Live photometer stream</CardTitle>
             <p className="mt-1 text-sm text-muted-foreground">

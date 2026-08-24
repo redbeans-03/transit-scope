@@ -203,16 +203,20 @@ export function LightCurves({ payload }: { payload: ExoplanetPayload }) {
   };
 
   return (
-    <Card className="gap-0 overflow-hidden p-0">
+    <Card className="gap-0 overflow-hidden p-0 py-0">
       <Tabs
         value={view}
         onValueChange={(value) => setView(value as ViewId)}
         className="gap-0"
       >
         <div className="flex flex-col gap-3 border-b border-border/70 p-4 sm:flex-row sm:items-center sm:justify-between">
-          <TabsList className="w-full sm:w-auto">
+          <TabsList className="w-full justify-start overflow-x-auto sm:w-auto [&::-webkit-scrollbar]:hidden">
             {VIEWS.map((item) => (
-              <TabsTrigger key={item.id} value={item.id} className="text-xs sm:text-sm">
+              <TabsTrigger
+                key={item.id}
+                value={item.id}
+                className="flex-none px-2.5 text-xs sm:flex-1 sm:text-sm"
+              >
                 {item.label}
               </TabsTrigger>
             ))}

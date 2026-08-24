@@ -75,7 +75,7 @@ export function ComparisonMatrix({ payload }: { payload: ExoplanetPayload }) {
   ];
 
   return (
-    <Card className="overflow-hidden p-0">
+    <Card className="overflow-hidden p-0 py-0">
       <CardContent className="p-0">
         <div className="overflow-x-auto">
           <Table>
