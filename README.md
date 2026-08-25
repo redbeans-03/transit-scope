@@ -70,6 +70,25 @@ charts come up blank, add that hostname to `allowedDevOrigins` in
 `next.config.ts`: Next blocks cross-origin requests for `/_next/*` dev assets,
 which 403s the client bundle while still server-rendering the page.
 
+### Publishing it
+
+Every route is prerendered, so the dashboard ships as static files with no
+server. `.github/workflows/deploy.yml` builds it and publishes to GitHub Pages
+on every push to `main`; enable it once under **Settings → Pages → Source →
+GitHub Actions**. The site then lives at
+`https://<user>.github.io/<repo>/`.
+
+To produce the same build locally:
+
+```bash
+NEXT_STATIC_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/<repo> npm run build
+npx serve out          # or any static file server
+```
+
+`NEXT_PUBLIC_BASE_PATH` is only needed when serving from a subdirectory, which
+is how GitHub Pages serves project sites. Omit both variables for a normal
+server-rendered build.
+
 ### Extraction pipeline
 
 Requires [uv](https://docs.astral.sh/uv/) (or any Python ≥ 3.10 environment).

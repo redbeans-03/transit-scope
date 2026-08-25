@@ -1,3 +1,13 @@
+/**
+ * Prefix for static assets referenced by a plain anchor or img tag. Next
+ * rewrites its own routes for `basePath`, but not raw hrefs into `public/`.
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+export function asset(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
+
 export function fixed(value: number, digits = 2): string {
   if (!Number.isFinite(value)) return "—";
   return value.toLocaleString("en-US", {

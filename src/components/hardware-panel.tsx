@@ -7,7 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { fixed } from "@/lib/format";
+import { asset, fixed } from "@/lib/format";
 import { PLOT_COLORS } from "@/lib/palette";
 import {
   analyseStream,
@@ -330,7 +330,7 @@ export function HardwarePanel({ u1, u2 }: { u1: number; u2: number }) {
             </pre>
           </div>
           <Button asChild variant="outline" size="sm" className="w-full">
-            <a href="/firmware/photometer.ino" download>
+            <a href={asset("/firmware/photometer.ino")} download>
               Download firmware sketch
             </a>
           </Button>
