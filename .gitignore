@@ -50,3 +50,6 @@ uv.lock
 # lightkurve / astroquery download cache
 .lightkurve/
 mastDownload/
+
+# source documents handed to the project, not part of it
+/uploads/
